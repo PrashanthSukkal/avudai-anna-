@@ -13,7 +13,7 @@ pipeline{
 
         stage('Checkout Source') {
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Avudayappan/helloworld.git/']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/PrashanthSukkal/avudai-anna-.git/']]])
             }
         }
         
@@ -47,7 +47,7 @@ pipeline{
     stage('Docker Run') {
      steps{
          script {
-            dockerImage.run("-p 8096:8000 --rm --name express-helloworldContainer")
+            dockerImage.run("-p 8096:8080 --rm --name express-helloworldContainer")
          }
      }
     } 
